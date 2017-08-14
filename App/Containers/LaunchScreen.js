@@ -48,10 +48,8 @@ export default class LaunchScreen extends Component {
         if(email == this.state.email && password == this.state.password){  // Check if the user if valid or not
           ToastAndroid.show('Welcome ' + email, ToastAndroid.SHORT);
           //sends data to next desktop profile
-          this.props.navigation.navigate('DesktopScreen', { email: this.state.email, password: this.state.password, 
-                                                            bio: bio,
-                                                            name: name})
-      }else if(email != this.state.email || password != this.state.password)
+          this.props.navigation.navigate('DesktopScreen')
+        }else if(email != this.state.email || password != this.state.password)
         ToastAndroid.show('User not found!', ToastAndroid.SHORT);
       }catch(error){
           ToastAndroid.show("Error in logging in", ToastAndroid.SHORT); // Alert Password or Email error
@@ -94,5 +92,5 @@ export default class LaunchScreen extends Component {
     )
   }
 }
-
+  
 
