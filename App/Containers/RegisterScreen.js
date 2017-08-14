@@ -52,9 +52,9 @@ export default class LaunchScreen extends Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor='#FFF' barStyle="light-content"/>
-        <Text style={[styles.centered, styles.logo]}>Welcome Doctor! ;) </Text>      
+        <Text style={[styles.centered, styles.logo]}>Welcome Doctor!</Text>      
         <ScrollView style={styles.container}>
-          <View style={styles.section} >
+          <View style={styles.section}>
             <View style={styles.loginSection}>
               <TextInput  style={styles.inputName}
                           keyboardType= 'default'
