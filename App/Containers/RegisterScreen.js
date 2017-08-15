@@ -10,7 +10,6 @@ import {
   TouchableHighlight,
   AsyncStorage,
 } from 'react-native'
-import { Images } from '../Themes'
 
 // Styles
 import styles from './Styles/RegisterScreenStyles'
