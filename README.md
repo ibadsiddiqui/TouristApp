@@ -27,9 +27,9 @@
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 This project adheres to Standard.  Our CI enforces this, so we suggest you enable linting to keep your project compliant during development.
 
-**To Lint on Commit**
+<!-- **To Lint on Commit**
 
-This is implemented using [husky](https://github.com/typicode/husky). There is no additional setup needed.
+This is implemented using [husky](https://github.com/typicode/husky). There is no additional setup needed. -->
 
 **Bypass Lint**
 
