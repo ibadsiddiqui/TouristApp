@@ -63,7 +63,7 @@ export default class LaunchScreen extends Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" barStyle="light-content"/>
-        <Text style={[styles.centered, styles.logo]}>Welcome back Doctor! ;) </Text>
+        <Text style={[styles.centered, styles.logo]}>Welcome back Tourist! ;) </Text>
         <ScrollView style={styles.container}>
           <View style={styles.section} >
             <View style={styles.loginSection}>
