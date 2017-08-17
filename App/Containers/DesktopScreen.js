@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import { 
-  ScrollView, 
-  Text,
-  ToastAndroid,
-  Image, 
   View,
   StatusBar,
   TextInput,
@@ -28,20 +24,15 @@ export default class LaunchScreen extends Component {
   render () {
     return (
       <View style={styles.container}>
-      <StatusBar
-        translucent={true}
-        // hidden={true}
-        barStyle="light-content"
-      />
-      <MapView
-            style={styles.map}
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
+        <StatusBar translucent={true} barStyle="light-content"/>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421}}
+        />
       </View>
     )
   }
