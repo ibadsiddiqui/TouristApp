@@ -55,6 +55,31 @@ export default class DesktopScreen extends Component {
     this.onRegionChange(region, region.latitude, region.longitude);
   }
 
+  render() {
+    return (
+      <View style={{flex: 1}}>
+        <MapView
+          style={styles.map}
+          region={this.state.mapRegion}
+          showsUserLocation={true}
+          followUserLocation={true}
+          onRegionChange={this.onRegionChange.bind(this)}
+          onPress={this.onMapPress.bind(this)}>
+          <MapView.Marker
+            coordinate={{
+              latitude: (this.state.lastLat + 0.00050) || -36.82339,
+              longitude: (this.state.lastLong + 0.00050) || -73.03569,
+            }}>
+            <View>
+              <Text style={{color: '#000'}}>
+                { this.state.lastLong } / { this.state.lastLat }
+              </Text>
+            </View>
+          </MapView.Marker>
+        </MapView>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
