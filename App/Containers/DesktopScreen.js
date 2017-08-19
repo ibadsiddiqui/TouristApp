@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 import MapView from 'react-native-maps';
-
+import styles from './Styles/DesktopScreenStyles'
 export default class DesktopScreen extends Component {
   constructor(){
     super();
@@ -18,6 +18,8 @@ export default class DesktopScreen extends Component {
       lastLong: null,
     }
   }
+
+  // start the trace using GPS when component is mounted
   componentDidMount() {
     this.watchID = navigator.geolocation.watchPosition((position) => {
       // Create the object to update this.state.mapRegion through the onRegionChange function
@@ -27,10 +29,13 @@ export default class DesktopScreen extends Component {
         latitudeDelta:  0.00922*1.5,
         longitudeDelta: 0.00421*1.5
       }
+      // calls the onRegionChange if the person changes his/her location
       this.onRegionChange(region, region.latitude, region.longitude);
     });
   }
 
+  //  the onRegionChange function traces if the person changes his/her location
+  // and sets to new one
   onRegionChange(region, lastLat, lastLong) {
     this.setState({
       mapRegion: region,
@@ -39,21 +44,22 @@ export default class DesktopScreen extends Component {
       lastLong: lastLong || this.state.lastLong
     });
   }
-
+  // remove the component if unmounted
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchID);
   }
 
-  onMapPress(e) {
-    console.log(e.nativeEvent.coordinate.longitude);
-    let region = {
-      latitude:       e.nativeEvent.coordinate.latitude,
-      longitude:      e.nativeEvent.coordinate.longitude,
-      latitudeDelta:  0.00922*1.5,
-      longitudeDelta: 0.00421*1.5
-    }
-    this.onRegionChange(region, region.latitude, region.longitude);
-  }
+  // on pressing the map get your current location
+  // onMapPress(e) {
+  //   console.log(e.nativeEvent.coordinate.longitude);
+  //   let region = {
+  //     latitude:       e.nativeEvent.coordinate.latitude,
+  //     longitude:      e.nativeEvent.coordinate.longitude,
+  //     latitudeDelta:  0.00922*1.5,
+  //     longitudeDelta: 0.00421*1.5
+  //   }
+  //   this.onRegionChange(region, region.latitude, region.longitude);
+  // }
 
   render() {
     return (
@@ -64,7 +70,7 @@ export default class DesktopScreen extends Component {
           showsUserLocation={true}
           followUserLocation={true}
           onRegionChange={this.onRegionChange.bind(this)}
-          onPress={this.onMapPress.bind(this)}>
+          >
           <MapView.Marker
             coordinate={{
               latitude: (this.state.lastLat + 0.00050) || -36.82339,
@@ -81,9 +87,3 @@ export default class DesktopScreen extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  map: {
-    ...StyleSheet.absoluteFillObject,
-  }
-});
