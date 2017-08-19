@@ -1,41 +1,28 @@
-import React, { Component } from 'react'
-import { 
-  View,
-  StatusBar,
-  TextInput,
-  TouchableHighlight,
-  AsyncStorage,
-} from 'react-native'
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import MapView from 'react-native-maps';
 
-import MapView from 'react-native-maps'
-// Styles
-import styles from './Styles/DesktopScreenStyles'
-
-
-export default class LaunchScreen extends Component {
-  // defines constructor
+export default class DesktopScreen extends Component {
   constructor(){
     super();
-    this.state={
-      email: "",
-      password: "",
+
+    //defines the latitude and longitude
+    this.state = {
+      mapRegion: null,
+      lastLat: null,
+      lastLong: null,
     }
   }
-  render () {
-    return (
-      <View style={styles.container}>
-        <StatusBar translucent={true} barStyle="light-content"/>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421}}
-        />
-      </View>
-    )
-  }
-}
-  
 
+}
+
+const styles = StyleSheet.create({
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  }
+});
