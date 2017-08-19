@@ -3,10 +3,11 @@
     android:versionCode="1"
     android:versionName="1.0">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
+    
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="22" />
@@ -17,6 +18,7 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
+    
     <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyCFJNzP51wMAYCAacDbuKrQ3IxrrIzZ1j4" />
@@ -32,6 +34,6 @@
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
-
+    
 </manifest>
 
