@@ -70,6 +70,8 @@ export default class DesktopScreen extends Component {
           showsUserLocation={true}
           followUserLocation={true}
           onRegionChange={this.onRegionChange.bind(this)}
+          mapType="hybrid"
+          showsPointsOfInterest={true}
           >
           <MapView.Marker
             coordinate={{
